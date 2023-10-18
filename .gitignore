@@ -1,0 +1,7 @@
+/.direnv
+/.west
+/.venv
+/zmk
+/zephyr
+/modules
+/build

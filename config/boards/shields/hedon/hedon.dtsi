@@ -1,0 +1,77 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+
+	chosen {
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+	};
+
+	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
+		columns = <42>;
+		rows = <1>;
+		map = <
+			RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)                   RC(0,26) RC(0,25) RC(0,24) RC(0,23) RC(0,22) RC(0,21)
+			RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)                  RC(0,32) RC(0,31) RC(0,30) RC(0,29) RC(0,28) RC(0,27)
+			RC(0,12) RC(0,13) RC(0,14) RC(0,15) RC(0,16) RC(0,17)                  RC(0,38) RC(0,37) RC(0,36) RC(0,35) RC(0,34) RC(0,33)
+			                                 RC(0,18)   RC(0,19) RC(0,20) RC(0,41) RC(0,40)   RC(0,39)
+		>;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-direct";
+		label = "KSCAN";
+		input-gpios =
+			// 029 = P0.29
+		    <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 020 = P0.20
+		    <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 031 = P0.31
+		    <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 017 = P0.17
+		    <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 008 = P0.08
+		    <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 006 = P0.06
+		    <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 022 = P0.22
+		    <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 002 = P0.02
+		    <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 024 = P0.24
+		    <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 115 = P1.15
+		    <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 100 = P1.00
+		    <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 113 = P1.13
+		    <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 107 = P1.07
+		    <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 104 = P1.04
+		    <&gpio1 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 109 = P1.09
+		    <&gpio1 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 117 = P1.17
+		    <&gpio1 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 111 = P1.11
+		    <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 011 = P0.11
+		    <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 101 = P1.01
+		    <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 104 = P1.04
+			<&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+			// 106 = P1.06
+			<&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+		;
+	};
+
+};

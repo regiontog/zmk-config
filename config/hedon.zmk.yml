@@ -1,0 +1,11 @@
+file_format: "1"
+id: hedon
+name: hedon
+type: shield
+url: https://github.com/regiontog/hedon
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - hedon_left
+  - hedon_right

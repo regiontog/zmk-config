@@ -1,0 +1,8 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_HEDON_LEFT
+	def_bool $(shields_list_contains,hedon_left)
+
+config SHIELD_HEDON_RIGHT
+	def_bool $(shields_list_contains,hedon_right)
